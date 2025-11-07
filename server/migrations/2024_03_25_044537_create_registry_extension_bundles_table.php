@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('registry_extension_bundles', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->index(); 
+            $table->uuid('uuid')->unique();
             $table->uuid('public_id')->index(); 
             $table->uuid('bundle_id')->index(); 
             $table->uuid('company_uuid'); 

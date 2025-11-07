@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('registry_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->index(); 
+            $table->uuid('uuid')->unique();
             $table->uuid('company_uuid'); 
             $table->uuid('user_uuid'); 
             $table->string('public_id')->nullable()->index();
