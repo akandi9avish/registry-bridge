@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('registry_extension_installs', function (Blueprint $table) {
             $table->increments('id');
-            $table->uuid('uuid')->index(); 
+            $table->uuid('uuid')->unique(); 
             $table->uuid('company_uuid'); 
             $table->uuid('extension_uuid'); 
             $table->json('meta')->nullable();
